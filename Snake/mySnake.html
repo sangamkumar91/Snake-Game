@@ -1,0 +1,295 @@
+<html>
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+
+<script src="js/jquery-1.11.3.js"></script>
+    
+<!-- Latest compiled and minified JavaScript -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script src="js/underscore-master/underscore.js"></script>
+<script src="js/backbone.js"></script>
+    
+    
+<style>
+
+    html,
+body {
+  height: 100%;
+  background-color: white;
+}
+body {
+  color: #000;
+  text-align: center;
+  
+}
+    
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 200px grey;
+          box-shadow: inset 0 0 200px grey;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+    
+ .glyphicon.glyphicon-expand {
+    font-size: 220px;
+}    
+    
+.homePageHeading{
+
+  font-size: 100px;
+  font-family: monospace;
+
+}   
+    
+.cover {
+  padding: 0 20px;
+}    
+    
+.inner {
+  padding: 30px;
+} 
+    
+ .col-lg-6 {
+     display:table;
+  -webkit-box-shadow: inset 0 0 275px red;
+          box-shadow: inset 0 0 275px red;
+     
+}   
+    
+    .col-lg-6:hover { 
+    background-color: yellow;
+}
+    
+.col-inner{
+     height: 50%;display: table-cell;vertical-align: middle;   
+
+}
+    
+    
+ .col-lg-7 {
+     display:table;
+  -webkit-box-shadow: inset 0 0 275px black;
+          box-shadow: inset 0 0 275px black;
+     
+}   
+
+.col-lg-5 {
+     display:table;
+  -webkit-box-shadow: inset 0 0 275px black;
+          box-shadow: inset 0 0 275px black;
+     
+}    
+  
+#homePlayNow a{
+
+color: black;
+    
+
+}
+    
+#homePlayNow a:hover{
+
+color: darkgreen;
+    
+
+}
+    
+#selectModeScreen .row .col-lg-6 .col-inner a:hover{
+
+color: orangered;
+    
+
+}
+
+#selectModeScreen .row .col-lg-6 .col-inner a{
+
+color: black;
+    
+
+}
+    
+    
+    
+</style>
+
+
+</head>
+<body>
+
+<!--
+    
+<div style = 'width:1200px; margin:0 auto; '>
+<table>
+<tr>
+<td ><h1 style = 'float:left;'>MetricStream Slytherin Challenge</h1></td>
+<td ><div id = 'myGamingBoard' style = 'background-color : black;float:left;'></div></td>
+<td ><h1 style = 'float:left; margin-left :15px;'>Your Score :  </h1></td>
+<td ><h1 style = 'float:left; margin-left :15px;' id ='myScore'></h1></td>
+</tr>
+</table>
+</div>
+
+<script src="js/mySnake.js"></script>
+
+-->
+    
+
+<div class="site-wrapper" id="homeScreen">
+    
+    <div class="site-wrapper-inner" >
+        
+        <div id="homePlayNow"  class="inner cover">
+        
+            <h1 class="homePageHeading">MetricStream Slytherin Challenge</h1>
+            
+            <p style= "margin-top : 10px;   font-size: 45px; ">Play Now.</p>
+            
+            <a  href="#selectModeScreen" >
+            <span class="glyphicon glyphicon-expand"></span>
+            </a>    
+        </div>
+    
+    </div>
+    
+</div>
+    
+
+<div id="selectModeScreen" class="container" style = "height: 100%; width: 100%; padding-right: 0px; padding-left: 0px;">
+    
+    <div class="row" style = "height: 100%; width: 100%; background-color: white;  margin-right: 0px; 
+   margin-left: 0px; padding-right: 0px; padding-left: 0px; " >
+        
+    <div class="col-lg-6" style = "height: 100%; width: 50%;padding-right: 0px; padding-left: 0px;">
+        
+        <div class="col-inner" style = "height: 50%;">
+            
+            <p style= "margin-top : 10px;   font-size: 45px;font-family: monospace; ">No Maze</p>
+            <a id="noMaze" href="#gameBoardScreen" >
+            <span class="glyphicon glyphicon-expand"></span>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-6" style = "height: 100%; width: 50%;padding-right: 0px; padding-left: 0px;">
+        
+        <div class="col-inner" style = "height: 50%;">
+            
+            <p style= "margin-top : 10px;   font-size: 45px; font-family: monospace;">Boundary Maze</p>
+            <a id="boundaryMaze" href="#gameBoardScreen" >
+            <span class="glyphicon glyphicon-expand"></span>
+            </a>
+        </div>
+
+    </div>        
+        
+
+    </div>
+    
+</div>
+<!--<div id="gameBoardScreen" class="container" style = "height: 100%; width: 100%; padding-right: 0px; padding-left: 0px;">
+        
+    <div class="row" style = "height: 100%; width: 100%;   margin-right: 0px; margin-left: 0px; background-color: green; width: 100%;padding-right: 0px; padding-left: 0px;">
+        
+        
+                       <div id = 'myGamingBoard' class="col-lg-8" style = 'background-color : black; float:left;'></div>
+                       <div class="col-lg-4" style = 'float:left; margin-left :15px;' id ='myScore'></div>
+         
+        
+        
+    </div>
+        
+
+</div> -->
+<div class="container" id="gameBoardScreen"  style = 'width:100%; height:100%;padding-right: 0px;  padding-left: 0px;'>
+<div  class="col-lg-7" style = ' background-color : green; height:100%; padding-right: 0px;  padding-left: 0px;'><div id = 'myGamingBoard' class="col-inner"></div></div> 
+    <div class="col-lg-5" style = ' background-color : brown; height:100%; padding-right: 0px;  padding-left: 0px; ' >
+        <div class="col-inner">
+        <h1>Score</h1>
+        <h1 id="myScore" style="  font-size: 70px;"></h1>
+        </div>
+    </div>
+</div>   
+
+<script src="js/mySnake.js"></script>
+    
+    
+
+    <script>
+    
+    
+        
+        
+            $("#homePlayNow a[href^='#']").on('click', function(e) {
+
+               e.preventDefault();
+               var hash = this.hash;
+
+               $('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 500, function(){
+
+                   window.location.hash = hash;
+                 });
+
+            });
+
+            $("#selectModeScreen .row .col-lg-6 .col-inner #noMaze[href^='#']").on('click', function(e) {
+
+
+
+               e.preventDefault();
+               var hash = this.hash;
+
+               $('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 500, function(){
+
+                   window.location.hash = hash;
+                   document.getElementById('homeScreen').style.display = "none";
+                   document.getElementById('selectModeScreen').style.display = "none";
+                   gameOverAlert = false;
+                   boundary = false;
+                 });
+
+            });        
+
+            $("#selectModeScreen .row .col-lg-6 .col-inner #boundaryMaze[href^='#']").on('click', function(e) {
+
+
+
+               e.preventDefault();
+               var hash = this.hash;
+
+               $('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 500, function(){
+
+                   window.location.hash = hash;
+                   document.getElementById('homeScreen').style.display = "none";
+                   document.getElementById('selectModeScreen').style.display = "none";
+                   gameOverAlert = false;
+                   boundary = true;
+                 });
+
+            });        
+        
+        
+    
+    </script>
+    
+
+    
+    
+</body>
+</html>	
