@@ -124,6 +124,8 @@ var moveSnake = function () {
             
             if(boundary)
                 table.style.border = '6px solid yellow';
+			else
+				table.style.border = '0px';	
 
 
 
@@ -264,12 +266,46 @@ var moveSnake = function () {
 		else
 
 		{
-
+		
+		
 
 		gameOverAlert =true;
-
+		
+					
 		clearInterval(interval);
 		
+		
+		document.getElementById('scoreBoardScreen').style.display = "block";
+
+
+               
+               var hash = "#scoreBoardScreen";
+
+               $('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 500, function(){
+
+                   window.location.hash = hash;
+                   document.getElementById('homeScreen').style.display = "none";
+                   document.getElementById('selectModeScreen').style.display = "none";
+				   document.getElementById('gameBoardScreen').style.display = "none";
+				   createMySnakeBoard();
+					createMySnake();
+					createMyFrog();
+
+		
+		x =11 ;
+		y =3;
+
+		direction = 'E';
+
+		gameOver = false;
+
+		gameOverAlert =false;
+
+                 });
+
+		/*
 		var btn = confirm('Game Over!!! Try Again ??');
 
 			if (btn)
@@ -278,29 +314,67 @@ var moveSnake = function () {
 
 
 
-					createMySnakeBoard();
-					createMySnake();
-					createMyFrog();
-
-					
-					x =11 ;
-					y =3;
-
-					direction = 'E';
-
-					gameOver = false;
-
-					gameOverAlert =false;
-					
-					interval = setInterval(moveSnake,75);
 
 				}
 			else
 				window.close();
+				*/
 
 
 	} 
 
+}
+
+function playAgain(){
+
+
+					
+				document.getElementById('gameBoardScreen').style.display = "block";
+
+
+				var hash = '#gameBoardScreen';
+
+					$('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 500, function(){
+
+                   window.location.hash = hash;
+                   document.getElementById('homeScreen').style.display = "none";
+                   document.getElementById('selectModeScreen').style.display = "none";
+				   document.getElementById('scoreBoardScreen').style.display = "none";
+				
+					clearInterval(interval);
+					interval = setInterval(moveSnake,75);
+					
+					});
+
+					
+					
+
+
+}
+
+function returnMenu(){
+
+
+
+			   document.getElementById('selectModeScreen').style.display = "block";
+               
+               var hash = "#selectModeScreen";
+
+               $('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 500, function(){
+
+                   window.location.hash = hash;
+                   document.getElementById('homeScreen').style.display = "none";
+                   document.getElementById('scoreBoardScreen').style.display = "none";
+				   document.getElementById('gameBoardScreen').style.display = "none";
+				   boundary = false;
+                 });
+
+					
+					
 }
 
 var interval = setInterval(moveSnake, 75);
